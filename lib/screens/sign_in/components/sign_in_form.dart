@@ -20,6 +20,23 @@ class _SignFormState extends State<SignForm> {
   final List<String> errors = [];
   String? email, password;
   bool remember = false;
+
+  void removeError({required String error}) {
+    if (errors.contains(error)) {
+      setState(() {
+        errors.remove(error);
+      });
+    }
+  }
+
+  void addError({required String error}) {
+    if (!errors.contains(error)) {
+      setState(() {
+        errors.add(error);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -88,27 +105,19 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       onSaved: (newValue) => password = newValue!,
       onChanged: (value) {
-        if (value!.isNotEmpty && errors.contains(kPassNullError)) {
-          setState(() {
-            errors.remove(kPassNullError);
-          });
-        } else if (value.length >= 8 && errors.contains(kShortPassError)) {
-          setState(() {
-            errors.remove(kShortPassError);
-          });
+        if (value.isNotEmpty) {
+          removeError(error: kPassNullError);
+        } else if (value.length <= 8) {
+          removeError(error: kShortPassError);
         }
         return null;
       },
       validator: (value) {
-        if (value!.isEmpty && !errors.contains(kPassNullError)) {
-          setState(() {
-            errors.add(kPassNullError);
-          });
+        if (value!.isEmpty) {
+          addError(error: kPassNullError);
           return "";
-        } else if (value.length < 8 && !errors.contains(kShortPassError)) {
-          setState(() {
-            errors.add(kShortPassError);
-          });
+        } else if (value.length < 8) {
+          addError(error: kShortPassError);
           return "";
         }
         return null;
@@ -128,29 +137,19 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       onSaved: (newValue) => email = newValue!,
       onChanged: (value) {
-        if (value.isNotEmpty && errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.remove(kEmailNullError);
-          });
-        } else if (emailValidationRegExp.hasMatch(value) &&
-            errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.remove(kInvalidEmailError);
-          });
+        if (value.isNotEmpty) {
+          removeError(error: kEmailNullError);
+        } else if (emailValidationRegExp.hasMatch(value)) {
+          removeError(error: kInvalidEmailError);
         }
         return null;
       },
       validator: (value) {
-        if (value!.isEmpty && !errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.add(kEmailNullError);
-          });
+        if (value!.isEmpty) {
+          addError(error: kEmailNullError);
           return "";
-        } else if (!emailValidationRegExp.hasMatch(value) &&
-            !errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.add(kInvalidEmailError);
-          });
+        } else if (!emailValidationRegExp.hasMatch(value)) {
+          addError(error: kInvalidEmailError);
           return "";
         }
         return null;

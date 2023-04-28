@@ -2,6 +2,8 @@ import 'package:eticaret_app/screens/splash/components/default_button.dart';
 import 'package:eticaret_app/size_config.dart';
 import 'package:flutter/material.dart';
 
+import '../../home/home_screen.dart';
+
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -30,7 +32,13 @@ class _BodyState extends State<Body> {
         const Spacer(),
         SizedBox(
             width: SizeConfig.screenWidth! * 0.7,
-            child: DefaultButton(text: "Back To Home", press: () {})),
+            child: DefaultButton(
+                text: "Back To Home",
+                press: () {
+                  //Home Page Yönlendirmesi yapılacak
+
+                  Navigator.pushNamed(context, HomeScreen.routeName);
+                })),
         const Spacer(),
       ],
     );

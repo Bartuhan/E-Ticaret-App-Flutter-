@@ -53,6 +53,22 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
   final List<String> errors = [];
   String? email;
 
+  void removeError({required String error}) {
+    if (errors.contains(error)) {
+      setState(() {
+        errors.remove(error);
+      });
+    }
+  }
+
+  void addError({required String error}) {
+    if (!errors.contains(error)) {
+      setState(() {
+        errors.add(error);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -62,28 +78,20 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
           TextFormField(
             onSaved: (newValue) => email = newValue,
             onChanged: (value) {
-              if (value.isNotEmpty && errors.contains(kEmailNullError)) {
-                setState(() {
-                  errors.remove(kEmailNullError);
-                });
-              } else if (emailValidationRegExp.hasMatch(value) &&
-                  errors.contains(kInvalidEmailError)) {
-                setState(() {
-                  errors.remove(kInvalidEmailError);
-                });
+              if (value.isNotEmpty) {
+                removeError(error: kEmailNullError);
+              } else if (emailValidationRegExp.hasMatch(value)) {
+                removeError(error: kInvalidEmailError);
               }
               return null;
             },
             validator: (value) {
-              if (value!.isEmpty && !errors.contains(kEmailNullError)) {
-                setState(() {
-                  errors.add(kEmailNullError);
-                });
-              } else if (!emailValidationRegExp.hasMatch(value) &&
-                  !errors.contains(kInvalidEmailError)) {
-                setState(() {
-                  errors.add(kInvalidEmailError);
-                });
+              if (value!.isEmpty) {
+                addError(error: kEmailNullError);
+                return "";
+              } else if (!emailValidationRegExp.hasMatch(value)) {
+                addError(error: kInvalidEmailError);
+                return "";
               }
               return null;
             },
