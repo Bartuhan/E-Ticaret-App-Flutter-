@@ -1,4 +1,6 @@
+import 'package:eticaret_app/screens/cart/cart_screen.dart';
 import 'package:eticaret_app/screens/complete_profile/complete_profile_screen.dart';
+import 'package:eticaret_app/screens/details/details_screen.dart';
 import 'package:eticaret_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:eticaret_app/screens/home/home_screen.dart';
 import 'package:eticaret_app/screens/login_success/login_success_screen.dart';
@@ -20,4 +22,6 @@ final Map<String, WidgetBuilder> routes = {
   CompleteProfileScreen.routeName: (context) => const CompleteProfileScreen(),
   OtpScreen.routeName: (context) => const OtpScreen(),
   HomeScreen.routeName: (context) => const HomeScreen(),
+  DetailsScreen.routeName: (context) => const DetailsScreen(),
+  CartScreen.routeName: (context) => const CartScreen(),
 };

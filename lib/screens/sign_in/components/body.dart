@@ -1,9 +1,9 @@
 import 'package:eticaret_app/size_config.dart';
 import 'package:flutter/material.dart';
 
-import 'no_account_text.dart';
+import '../../../components/no_account_text.dart';
+import '../../../components/social_cart.dart';
 import 'sign_in_form.dart';
-import 'social_cart.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);

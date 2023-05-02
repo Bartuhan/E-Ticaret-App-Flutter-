@@ -1,8 +1,8 @@
 import 'package:eticaret_app/size_config.dart';
 import 'package:flutter/material.dart';
 
+import '../../../components/social_cart.dart';
 import '../../../constants.dart';
-import '../../sign_in/components/social_cart.dart';
 import 'sign_up_form.dart';
 
 class Body extends StatelessWidget {

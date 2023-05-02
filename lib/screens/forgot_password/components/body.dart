@@ -1,11 +1,11 @@
-import 'package:eticaret_app/screens/sign_in/components/form_error.dart';
-import 'package:eticaret_app/screens/sign_in/components/no_account_text.dart';
-import 'package:eticaret_app/screens/splash/components/default_button.dart';
+import 'package:eticaret_app/components/default_button.dart';
+import 'package:eticaret_app/components/form_error.dart';
+import 'package:eticaret_app/components/no_account_text.dart';
 import 'package:eticaret_app/size_config.dart';
 import 'package:flutter/material.dart';
 
+import '../../../components/custom_surffix_icon.dart';
 import '../../../constants.dart';
-import '../../sign_in/components/custom_surffix_icon.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);

@@ -1,9 +1,9 @@
 import 'package:eticaret_app/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
-import '../../splash/components/default_button.dart';
 
 class OtpForm extends StatefulWidget {
   const OtpForm({Key? key}) : super(key: key);

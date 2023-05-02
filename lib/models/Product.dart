@@ -6,8 +6,10 @@ class Product {
   final List<Color> colors;
   final double rating, price;
   final bool isFavorite, isPopular;
+  final int id;
 
   Product({
+    required this.id,
     required this.title,
     required this.description,
     required this.images,
@@ -22,6 +24,7 @@ class Product {
 //Our Demo Practice
 List<Product> demoProducts = [
   Product(
+    id: 1,
     images: [
       "assets/images/ps4_console_white_1.png",
       "assets/images/ps4_console_white_2.png",
@@ -42,6 +45,7 @@ List<Product> demoProducts = [
     isPopular: true,
   ),
   Product(
+    id: 2,
     images: [
       "assets/images/Image Popular Product 2.png",
     ],
@@ -58,6 +62,7 @@ List<Product> demoProducts = [
     isPopular: true,
   ),
   Product(
+    id: 3,
     images: [
       "assets/images/glap.png",
     ],
@@ -75,6 +80,7 @@ List<Product> demoProducts = [
     isPopular: true,
   ),
   Product(
+    id: 4,
     images: [
       "assets/images/wireless headset.png",
     ],

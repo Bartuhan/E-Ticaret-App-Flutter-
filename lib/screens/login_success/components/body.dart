@@ -1,7 +1,7 @@
-import 'package:eticaret_app/screens/splash/components/default_button.dart';
-import 'package:eticaret_app/size_config.dart';
+import 'package:eticaret_app/components/default_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../../size_config.dart';
 import '../../home/home_screen.dart';
 
 class Body extends StatefulWidget {

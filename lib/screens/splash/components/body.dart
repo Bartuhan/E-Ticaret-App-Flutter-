@@ -3,7 +3,7 @@ import 'package:eticaret_app/screens/sign_in/sign_in.dart';
 import 'package:eticaret_app/size_config.dart';
 import 'package:flutter/material.dart';
 
-import 'default_button.dart';
+import '../../../components/default_button.dart';
 import 'splash_content.dart';
 
 class Body extends StatefulWidget {

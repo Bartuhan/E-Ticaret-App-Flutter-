@@ -1,11 +1,11 @@
 import 'package:eticaret_app/screens/complete_profile/complete_profile_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../../components/custom_surffix_icon.dart';
+import '../../../components/default_button.dart';
+import '../../../components/form_error.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
-import '../../sign_in/components/custom_surffix_icon.dart';
-import '../../sign_in/components/form_error.dart';
-import '../../splash/components/default_button.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({Key? key}) : super(key: key);

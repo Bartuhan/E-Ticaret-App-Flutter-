@@ -1,10 +1,10 @@
 import 'package:eticaret_app/routs.dart';
-import 'package:eticaret_app/screens/splash/splash_screen.dart';
+import 'package:eticaret_app/screens/home/home_screen.dart';
 import 'package:eticaret_app/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: "E Ticaret App",
       theme: theme(),
       //home: SplashScreen(),
-      initialRoute: SplashScreen.routeName,
+      initialRoute: HomeScreen.routeName,
       routes: routes,
     );
   }

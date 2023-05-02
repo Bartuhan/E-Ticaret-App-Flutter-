@@ -1,3 +1,4 @@
+import 'package:eticaret_app/screens/cart/cart_screen.dart';
 import 'package:eticaret_app/screens/home/components/search_field.dart';
 import 'package:eticaret_app/size_config.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class HomeHeader extends StatelessWidget {
           IconButtonWithCounter(
             svgSrc: "assets/icons/Cart Icon.svg",
             //numOfItems: 9,
-            press: () {},
+            press: () => Navigator.pushNamed(context, CartScreen.routeName),
           ),
           IconButtonWithCounter(
             svgSrc: "assets/icons/Bell.svg",
