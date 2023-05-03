@@ -1,3 +1,5 @@
+import 'package:eticaret_app/components/custom_bottom_navbar.dart';
+import 'package:eticaret_app/enum_state.dart';
 import 'package:eticaret_app/screens/home/components/body.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +14,7 @@ class HomeScreen extends StatelessWidget {
     SizeConfig().init(context);
     return const Scaffold(
       body: Body(),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 }

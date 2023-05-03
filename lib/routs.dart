@@ -5,6 +5,7 @@ import 'package:eticaret_app/screens/forgot_password/forgot_password_screen.dart
 import 'package:eticaret_app/screens/home/home_screen.dart';
 import 'package:eticaret_app/screens/login_success/login_success_screen.dart';
 import 'package:eticaret_app/screens/otp/otp_screen.dart';
+import 'package:eticaret_app/screens/profile/profile_screen.dart';
 import 'package:eticaret_app/screens/sign_in/sign_in.dart';
 import 'package:eticaret_app/screens/splash/splash_screen.dart';
 import 'package:flutter/widgets.dart';
@@ -24,4 +25,5 @@ final Map<String, WidgetBuilder> routes = {
   HomeScreen.routeName: (context) => const HomeScreen(),
   DetailsScreen.routeName: (context) => const DetailsScreen(),
   CartScreen.routeName: (context) => const CartScreen(),
+  ProfileScreen.routeName: (context) => const ProfileScreen(),
 };
