@@ -1,4 +1,4 @@
-# eticaret_app
+# eticaret_app Flutter
 
 A new Flutter project.
 
